@@ -9,7 +9,6 @@ def getHTMLText(url):
     r = requests.get(url, timeout = 60)
     r.raise_for_status()
     html = r.text
-    # print(html)
     Soup = BeautifulSoup(html,"lxml")
     tr = Soup.find_all("tr")
     for td in tr:
@@ -18,7 +17,7 @@ def getHTMLText(url):
             # print(data)
             print(data[0].string,"--->",data[3].string)
             print("***")
-    return html
+    return None
 
     # except:
         # print('something wrong!')
@@ -27,7 +26,6 @@ def getHTMLText(url):
 def main():
     url="http://www.bjzhongyi.com/jzzn/article/7020.html"
     HTML=getHTMLText(url)
-    # print(HTML)
 
 
 

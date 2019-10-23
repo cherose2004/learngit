@@ -10,7 +10,7 @@ def getHTMLText(url):
     r.raise_for_status()
     html = r.text
     # print(html)
-    Soup = BeautifulSoup(html)
+    Soup = BeautifulSoup(html,"lxml")
     tr = Soup.find_all("tr")
     for td in tr:
         data = td.find_all("td")
